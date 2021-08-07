@@ -65,9 +65,9 @@ $enc = $this->encoder();
 
 							<div class="form-group media-preview">
 								<input class="fileupload" type="file" tabindex="<?= $this->get( 'tabindex' ) ?>"
-									v-bind:name="'media[_idx_][file]'.replace('_idx_', idx)"
+									v-bind:name="'media[_idx_][file][]'.replace('_idx_', idx)"
 									v-bind:readonly="item['media.siteid'] != siteid"
-									v-on:change="files(idx, $event.target.files)" />
+									v-on:change="files(idx, $event.target.files)" multiple/>
 								<input class="item-url" type="hidden"
 									v-bind:name="`<?= $enc->js( $this->formparam( ['media', '_idx_', 'media.url'] ) ) ?>`.replace('_idx_', idx)"
 									v-model="item['media.url']" />
